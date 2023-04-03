@@ -1,0 +1,22 @@
+{
+    "name": "metaverse-systems/auth-api",
+    "autoload": {
+        "psr-4": {
+            "MetaverseSystems\\AuthApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tim Schwartz",
+            "email": "tim@metaverse.systems"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MetaverseSystems\\AuthApi\\ApiServiceProvider"
+            ]
+        }
+    }
+}
