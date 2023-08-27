@@ -11,7 +11,9 @@
             "email": "tim@metaverse.systems"
         }
     ],
-    "require": {},
+    "require": {
+        "spatie/laravel-permission": "^5.10"
+    },
     "extra": {
         "laravel": {
             "providers": [
