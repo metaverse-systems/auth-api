@@ -11,6 +11,7 @@
             "email": "tim@metaverse.systems"
         }
     ],
+    "license": "MIT",
     "require": {
         "spatie/laravel-permission": "^5.10"
     },
