@@ -8,6 +8,8 @@ use MetaverseSystems\AuthApi\Controllers\UserController;
 Route::group(['middleware'=>['api'], 'prefix'=>'api'], function () {
     Route::post('register', [AuthController::class, 'register']);
     Route::post('login', [AuthController::class, 'login']);
+    Route::post('password/email', [AuthController::class, 'sendPasswordResetLink'])->middleware('guest');
+    Route::post('password/reset', [AuthController::class, 'resetPassword'])->middleware('guest');
 });
 
 Route::group(['middleware'=>"auth:api", "prefix"=>"api"], function () {
