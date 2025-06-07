@@ -25,8 +25,6 @@ class ApiServiceProvider extends ServiceProvider
     {
         config(['auth.providers.users.model' => \MetaverseSystems\AuthApi\Models\User::class]);
 
-        \Laravel\Sanctum\Sanctum::ignoreMigrations();
-
         $pat = base_path()."/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php";
         if(file_exists($pat)) unlink($pat);
 
