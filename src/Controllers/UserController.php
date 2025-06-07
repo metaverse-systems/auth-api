@@ -17,12 +17,10 @@ class UserController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
-/*
-       if(!Auth::user()->can("list users"))
+        if(!Auth::user()->can("list users"))
         {
             return response()->json(["message"=>"No permission."], 403);
         }
-*/
 
         return User::withTrashed()->get();
     }

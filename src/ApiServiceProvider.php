@@ -5,6 +5,8 @@ namespace MetaverseSystems\AuthApi;
 use Illuminate\Support\ServiceProvider;
 use App;
 use MetaverseSystems\AuthApi\Controllers\UserController;
+use MetaverseSystems\AuthApi\Models\Role;
+use MetaverseSystems\AuthApi\Models\Permission;
 
 class ApiServiceProvider extends ServiceProvider
 {
@@ -51,6 +53,13 @@ class ApiServiceProvider extends ServiceProvider
                 'hash' => false
             ];
             config(['auth.guards'=>$guards]);
+
+/*
+            $permissions = config('permission.models');
+            $permissions['permission'] = Permission::class;
+            $permissions['permission'] = Role::class;
+            config(['permission.models'=>$permissions]);
+*/
         });
     }
 }
