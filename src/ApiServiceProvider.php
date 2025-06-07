@@ -40,8 +40,10 @@ class ApiServiceProvider extends ServiceProvider
         ], 'config');
 
         App::booted(function() {
-            app('router')->get('/', function() { return response()->json([], 200); })->middleware('web');
-            app('router')->get('/{any}', function() { return response()->json([], 200); })->middleware('web')->where('any', '^.*$');
+            if(config('metaverse-auth-api.override-any-route')) {
+                app('router')->get('/', function() { return response()->json([], 200); })->middleware('web');
+                app('router')->get('/{any}', function() { return response()->json([], 200); })->middleware('web')->where('any', '^.*$');
+            }
             app('router')->get('/api/user', [UserController::class, "index"])->middleware("auth:api");
 
             $guards = config('auth.guards');
